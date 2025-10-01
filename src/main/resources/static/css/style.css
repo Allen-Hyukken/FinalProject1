@@ -1,0 +1,311 @@
+body {
+    font-family: "instrument-sans", sans-serif;
+}
+
+/* Step Cards */
+.step-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+}
+
+.step-card {
+    width: 300px;
+    background-color: #f7f24a;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: fill;
+}
+
+.step-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.step-label {
+    background: white;
+    border-radius: 20px;
+    display: inline-block;
+    padding: 4px 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.step-content h3 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+    color: #333;
+}
+
+.step-content p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 0;
+    position: relative;
+    text-align: left;
+}
+.hero h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    color: white;
+}
+.hero p {
+    font-size: 1.1rem;
+    color: #ddd;
+}
+.hero .btn-warning {
+    font-weight: bold;
+}
+.hero-img {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 300px;
+    opacity: 0.4;
+}
+
+/* Feature Cards */
+.card-section {
+    background: white;
+    border-radius: 25px;
+    padding: 30px;
+    margin-top: -50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+.feature-card {
+    border: 2px solid #eee;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+.feature-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+.feature-card h5 {
+    font-weight: 600;
+    margin-top: 15px;
+    color: #333;
+}
+.feature-card small {
+    color: #666;
+}
+
+/* Card Overlay */
+.card-overlay {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 100%;
+}
+.card-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+.card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-content h5 {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+.card-content p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+.arrow {
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+/* Podium Section */
+.podium-wrapper {
+    text-align: center;
+    padding: 50px 15px;
+    background: linear-gradient(180deg, #fff, #f9f9ff);
+}
+.podium {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    margin-top: 50px;
+}
+.podium-column {
+    background: linear-gradient(to top, #cfd9ff, #e8ecff);
+    border-radius: 10px;
+    width: 80px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: #3757e4;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.podium-1 { height: 180px; z-index: 3; }
+.podium-2 { height: 140px; z-index: 2; }
+.podium-3 { height: 120px; z-index: 1; }
+.winner-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+    position: absolute;
+    top: -40px;
+}
+.winner-1 { left: 50%; transform: translateX(-50%); }
+.winner-2 { right: -10px; }
+.winner-3 { left: -10px; }
+.learn-btn {
+    margin-top: 40px;
+    background-color: #9063f9;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.learn-btn:hover {
+    background-color: #7a4ce3;
+}
+
+/* Mosaic Section */
+.mosaic-container {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+.mosaic-title { font-size: 2rem; font-weight: 700; color: #333; margin-bottom: 10px; }
+.mosaic-desc { color: #6c757d; margin-bottom: 40px; }
+.mosaic-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+.mosaic-item {
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    background-size: cover;
+    background-position: center;
+}
+.img-portrait { aspect-ratio: 3 / 4; }
+.bg-purple { background-color: #b29bfc; }
+.bg-yellow { background-color: #fce96a; }
+.bg-orange { background-color: #ffaa33; }
+.bg-lightblue { background-color: #a0e0ff; }
+
+@media (max-width: 768px) { .mosaic-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 576px) { .mosaic-grid { grid-template-columns: 1fr; } }
+
+/* Auth Pages */
+
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f7f24a, #9063f9);
+}
+
+.auth-card {
+    width: 400px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.auth-card h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #333;
+}
+
+.auth-card p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+}
+
+.auth-input:focus {
+    border-color: #9063f9;
+    outline: none;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    background: #f7f24a;
+    color: #333;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-btn:hover {
+    background: #fce96a;
+}
+
+.alt-link {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.alt-link a {
+    color: #9063f9;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.alt-link a:hover {
+    text-decoration: underline;
+}
