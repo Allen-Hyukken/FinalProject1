@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>my quizzes - edukator</title>
+  <link href="http://fonts.googleapis.com/css2?family=jost:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style-liberty.css">
+</head>
+
+<body>
+<div th:replace="fragments/navbar :: navbar"></div>
+<section class="w3l-about-breadcrumb text-center">
+  <div class="breadcrumb-bg breadcrumb-bg-about py-5">
+    <div class="container py-lg-5 py-md-4">
+      <div class="w3breadcrumb-gids">
+        <div class="w3breadcrumb-left text-left">
+          <h2 class="title aboutpagebanner">
+            my quizzes </h2>
+          <p class="inner-page-para mt-2">
+            your dashboard for joined and created quizzes.</p>
+        </div>
+        <div class="w3breadcrumb-right">
+          <ul class="breadcrumbs-custom-path">
+            <li><a href="/home">home</a></li>
+            <li class="active"><span class="fas fa-angle-double-right mx-2"></span> my quizzes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="w3l-aboutblock1" id="quizzes-dashboard">
+  <div class="midd-w3 py-5">
+    <div class="container py-lg-5 py-md-4 py-2">
+      <div class="row">
+
+        <div class="col-lg-6 left-wthree-img pr-lg-5">
+          <h5 class="title-subw3hny mb-1">joined quizzes</h5>
+          <h3 class="title-w3l">quizzes you are currently playing or have finished</h3>
+
+          <div class="quiz-item mt-4 p-4 border rounded shadow-sm">
+            <a href="#quiz-detail">
+              <h4 class="quiz-title">the ultimate history challenge</h4>
+            </a>
+            <p class="quiz-meta text-muted">host: david marks | status: in progress</p>
+            <a href="#continue" class="btn btn-style btn-sm btn-primary mt-2">continue quiz</a>
+          </div>
+
+          <div class="quiz-item mt-3 p-4 border rounded shadow-sm">
+            <a href="#quiz-detail">
+              <h4 class="quiz-title">javascript fundamentals test</h4>
+            </a>
+            <p class="quiz-meta text-muted">host: lynda stone | status: finished (score: 8/10)</p>
+            <a href="#view-results" class="btn btn-style btn-sm btn-secondary mt-2">view results</a>
+          </div>
+
+          <div class="quiz-item mt-3 p-4 border rounded shadow-sm">
+            <a href="#quiz-detail">
+              <h4 class="quiz-title">general knowledge quiz #42</h4>
+            </a>
+            <p class="quiz-meta text-muted">host: public | status: upcoming (starts in 2 hours)</p>
+            <a href="#ready" class="btn btn-style btn-sm btn-info mt-2">ready up</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mt-lg-0 mt-5 about-right-faq align-self pl-lg-5">
+          <h5 class="title-subw3hny mb-1">created quizzes</h5>
+          <h3 class="title-w3l">manage your quizzes and view statistics</h3>
+
+          <div class="quiz-item mt-4 p-4 border rounded shadow-sm">
+            <a href="#quiz-manage">
+              <h4 class="quiz-title">my science trivia masters</h4>
+            </a>
+            <p class="quiz-meta text-muted">code: abc-123 | status: active (5 players joined)</p>
+            <a href="#manage" class="btn btn-style btn-sm btn-success mt-2">manage quiz</a>
+          </div>
+
+          <div class="quiz-item mt-3 p-4 border rounded shadow-sm">
+            <a href="#quiz-manage">
+              <h4 class="quiz-title">basic spring boot concepts</h4>
+            </a>
+            <p class="quiz-meta text-muted">code: def-456 | status: closed (20 players finished)</p>
+            <a href="#stats" class="btn btn-style btn-sm btn-secondary mt-2">view stats</a>
+          </div>
+
+          <div class="text-center mt-5">
+            <a href="/create-quiz" class="btn btn-style btn-primary mt-4">create a new quiz</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div th:replace="fragments/footer :: footer"></div>
+<button onclick="topfunction()" id="movetop" title="go to top">
+  <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+</button>
+<script>
+  // when the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () {
+    scrollfunction()
+  };
+
+  function scrollfunction() {
+    if (document.body.scrolltop > 20 || document.documentElement.scrolltop > 20) {
+      document.getelementbyid("movetop").style.display = "block";
+    } else {
+      document.getelementbyid("movetop").style.display = "none";
+    }
+  }
+
+  // when the user clicks on the button, scroll to the top of the document
+  function topfunction() {
+    document.body.scrolltop = 0;
+    document.documentElement.scrolltop = 0;
+  }
+</script>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/theme-change.js"></script>
+<script>
+  $(function () {
+    $('.navbar-toggler').click(function () {
+      $('body').toggleClass('noscroll');
+    })
+  });
+</script>
+<script>
+  $(window).on("scroll", function () {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 80) {
+      $("#site-header").addClass("nav-fixed");
+    } else {
+      $("#site-header").removeClass("nav-fixed");
+    }
+  });
+
+  //main navigation active class add remove
+  $(".navbar-toggler").on("click", function () {
+    $("header").toggleClass("active");
+  });
+  $(document).on("ready", function () {
+    if ($(window).width() > 991) {
+      $("header").removeClass("active");
+    }
+    $(window).on("resize", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+    });
+  });
+</script>
+<script src="/js/bootstrap.min.js"></script>
+
+<script>(function(){function c(){var b=a.contentdocument||a.contentwindow.document;if(b){var d=b.createelement('script');d.innerhtml="window.__cf$cv$params={r:'98825f09a8b74a03',t:'mtc1otm4odmznd=='};var a=document.createelement('script');a.src='../../../../../../cdn-cgi/challenge-platform/h/g/scripts/jsd/4687995f25e1/maind41d.js';document.getelementsbytagname('head')[0].appendchild(a);";b.getelementsbytagname('head')[0].appendchild(d)}}if(document.body){var a=document.createelement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendchild(a);if('loading'!==document.readystate)c();else if(window.addeventlistener)document.addeventlistener('domcontentloaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readystate&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+
+</html>

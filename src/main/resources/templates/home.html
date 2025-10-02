@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>quiz home - edukator</title>
+    <link href="http://fonts.googleapis.com/css2?family=jost:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style-liberty.css">
+</head>
+
+<body>
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<section class="bannerw3l-hnyv">
+    <div class="banner-layer">
+        <video autoplay muted loop id="myvideo">
+            <source src="assets/images/line-edu.mp4" type="video/mp4">
+            your browser does not support html5 video.
+        </video>
+        <div class="main-content-top">
+            <div class="container">
+                <div class="main-content">
+                    <h4>ready for a challenge?</h4>
+                    <h3>join a <span class="inn-text">quiz</span> using a code</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w3apply-admission">
+        <div class="apply-admission-wrap">
+            <div class="apply-admission-inner">
+                <h4 class="title text-center">
+                    <span>enter quiz code</span>
+                </h4>
+                <div class="caption text-center mb-2">
+                    fastest way to play
+                </div>
+                <div class="apply-form">
+                    <form action="#" class="" method="post">
+                        <input type="text" name="quizcode" placeholder="quiz code" required="">
+                        <input type="text" name="username" placeholder="your name" required="">
+                        <button class="btn btn-style btn-primary">join quiz</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="w3l-homeblock1" id="about">
+    <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-3">
+            <div class="row cwp23-grids align-items-center">
+                <div class="col-lg-12 text-center"> <h5 class="title-subw3hny">quiz creation</h5>
+                    <h3 class="title-w3l">host your own <span class="inn-text">quiz</span></h3>
+                    <h6 class="mt-md-4 mt-md-5 mt-4">create and share your own questions
+                        <br>and challenge others.</h6>
+                    <a href="/create-quiz" class="btn btn-style btn-primary mt-lg-5 mt-4">create quiz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<button onclick="topfunction()" id="movetop" title="go to top">
+    <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+</button>
+<script>
+    // when the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollfunction()
+    };
+
+    function scrollfunction() {
+        if (document.body.scrolltop > 20 || document.documentElement.scrolltop > 20) {
+            document.getelementbyid("movetop").style.display = "block";
+        } else {
+            document.getelementbyid("movetop").style.display = "none";
+        }
+    }
+
+    // when the user clicks on the button, scroll to the top of the document
+    function topfunction() {
+        document.body.scrolltop = 0;
+        document.documentElement.scrolltop = 0;
+    }
+</script>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/theme-change.js"></script>
+
+<script>
+    $(function () {
+        $('.navbar-toggler').click(function () {
+            $('body').toggleClass('noscroll');
+        })
+    });
+</script>
+<script>
+    $(window).on("scroll", function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 80) {
+            $("#site-header").addClass("nav-fixed");
+        } else {
+            $("#site-header").removeClass("nav-fixed");
+        }
+    });
+
+    //main navigation active class add remove
+    $(".navbar-toggler").on("click", function () {
+        $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+        if ($(window).width() > 991) {
+            $("header").removeClass("active");
+        }
+        $(window).on("resize", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+        });
+    });
+</script>
+<script src="/js/bootstrap.min.js"></script>
+
+<script>(function(){function c(){var b=a.contentdocument||a.contentwindow.document;if(b){var d=b.createelement('script');d.innerhtml="window.__cf$cv$params={r:'98825f072a3b6b63',t:'mtc1otm4odmznd=='};var a=document.createelement('script');a.src='../../../../../../cdn-cgi/challenge-platform/h/g/scripts/jsd/4687995f25e1/maind41d.js';document.getelementsbytagname('head')[0].appendchild(a);";b.getelementsbytagname('head')[0].appendchild(d)}}if(document.body){var a=document.createelement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendchild(a);if('loading'!==document.readystate)c();else if(window.addeventlistener)document.addeventlistener('domcontentloaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readystate&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+
+</html>
