@@ -16,7 +16,7 @@ public class QuizController {
             return "login";
         }
 
-        @GetMapping("/home/about")
+        @GetMapping("/about")
         public String about() {
             return "about";
         }
@@ -30,4 +30,6 @@ public class QuizController {
         public String courses() {
             return "courses";
         }
+
+
 }
