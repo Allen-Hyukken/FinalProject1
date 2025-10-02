@@ -1,0 +1,80 @@
+<!-- fragments/navbar.html -->
+<head>
+    <link rel="stylesheet" th:href="@{/css/style-liberty.css}">
+</head>
+
+<header id="site-header" class="fixed-top" th:fragment="navbar">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark stroke">
+            <h1>
+                <a class="navbar-brand" th:href="@{/index}">
+                    <i class="fas fa-chalkboard-teacher"></i> Edukator
+                </a>
+            </h1>
+            <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse"
+                    data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ml-lg-auto">
+                    <li class="nav-item"><a class="nav-link" th:href="@{/index}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/home/about}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/courses}">Courses</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pages <span class="fa fa-angle-down"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" th:href="@{/blog}">Blog posts</a>
+                            <a class="dropdown-item" th:href="@{/blog-single}">Blog single</a>
+                            <a class="dropdown-item" th:href="@{/error}">404 Error page</a>
+                            <a class="dropdown-item" th:href="@{/landing}">Landing page</a>
+                            <a class="dropdown-item" th:href="@{/elements}">Elements page</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/login}">LOG OUT</a></li>
+                    <li class="header-search mr-lg-2 mt-lg-0 mt-4 position-relative">
+                        <div class="search-right">
+                            <a href="#search" class="btn btn-style search-btn" title="search"><span
+                                    class="fas fa-search mr-2" aria-hidden="true"></span> Search</a>
+                            <!-- search popup -->
+                            <div id="search" class="pop-overlay">
+                                <div class="popup">
+
+                                    <form action="https://p.w3layouts.com/demos_new/template_demo/13-07-2021/edukator-liberty-demo_Free/199581931/web/error.html" method="GET" class="search-box">
+                                        <input type="search" placeholder="Enter Keyword" name="search"
+                                               required="required" autofocus="">
+                                        <button type="submit" class="btn"><span class="fas fa-search"
+                                                                                aria-hidden="true"></span></button>
+                                    </form>
+
+                                </div>
+                                <a class="close" href="#close">×</a>
+                            </div>
+                            <!-- /search popup -->
+                        </div>
+                    </li>
+                    <!--//search-right-->
+                </ul>
+            </div>
+
+            <div class="mobile-position">
+                <nav class="navigation">
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox">
+                            <div class="mode-container py-1">
+                                <i class="gg-sun"></i>
+                                <i class="gg-moon"></i>
+                            </div>
+                        </label>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+    </div>
+</header>

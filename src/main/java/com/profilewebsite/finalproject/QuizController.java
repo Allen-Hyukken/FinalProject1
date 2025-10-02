@@ -15,4 +15,19 @@ public class QuizController {
         public String login() {
             return "login";
         }
-    }
+
+        @GetMapping("/home/about")
+        public String about() {
+            return "about";
+        }
+
+        @GetMapping("/landing")
+        public String landing() {
+            return "landing-single";
+        }
+
+        @GetMapping("/courses")
+        public String courses() {
+            return "courses";
+        }
+}
