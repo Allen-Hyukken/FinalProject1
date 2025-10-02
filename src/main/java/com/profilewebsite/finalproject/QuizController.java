@@ -12,10 +12,10 @@ public class QuizController {
         }
         @GetMapping("/login")
         public String login() {
-            return "login.html";
+            return "login";
         }
         @GetMapping("/signup")
-        public String signpage() {
-            return "signup.html";
+        public String signin() {
+            return "signup";
         }
     }
