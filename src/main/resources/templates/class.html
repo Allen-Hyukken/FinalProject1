@@ -74,7 +74,7 @@
     <!--**********************************
         Sidebar start
     ***********************************-->
-    <div th:replace="fragments/sidebar :: sidebar"></div>
+    <div th:replace="fragments/sidebarteacher :: sidebarteacher"></div>
     <!--**********************************
         Sidebar end
     ***********************************-->
@@ -89,13 +89,18 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Make a class</h5>
-                    <form  method="get">
+                    <form action="/class" method="get">
                         <div class="form-group">
                             <input type="text" class="form-control input-rounded" placeholder="Class Name">
-                            <input type="file" class="form-control-file">
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="classPic">
+                            <label class="custom-file-label" for="classPic">Class Picture</label>
+                        </div>
+                        <div class="container-fluid">
+                            <button type="submit" class="btn mb-1 btn-success">Success</button>
                         </div>
 
-                        <button type="submit" class="btn mb-1 btn-success">Success</button>
                     </form>
                 </div>
 
@@ -116,7 +121,7 @@
                                 </div>
                                 <div class="card-footer">
                                     <p class="card-text d-inline"><small class="text-muted">Last updated 3 mins ago</small>
-                                    </p><a href="#" class="card-link float-right"><small>Card link</small></a>
+                                    </p><a href="/classlist" class="card-link float-right"><small>Card link</small></a>
                                 </div>
                             </div>
                         </div>

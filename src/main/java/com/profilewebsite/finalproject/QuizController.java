@@ -70,6 +70,15 @@ public class QuizController {
         public String classPage() {
             return "class"; // returns user.html
         }
+        @GetMapping("/classlist")
+        public String classlistPage() {
+            return "classlist"; // returns user.html
+        }
+        @GetMapping("/insidequiz")
+        public String insidequizPage() {
+            return "insidequiz"; // returns user.html
+        }
+
 
 
 
