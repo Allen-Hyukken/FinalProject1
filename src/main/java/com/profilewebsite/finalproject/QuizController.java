@@ -66,6 +66,10 @@ public class QuizController {
         public String studentPage() {
             return "student"; // returns user.html
         }
+        @GetMapping("/class")
+        public String classPage() {
+            return "class"; // returns user.html
+        }
 
 
 
