@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class QuizController {
 
-
-        @GetMapping("/home")
-        public String home() {
-            return "student";
+        @GetMapping("/")
+        public String index() {
+            return "do_not_edit_this";
         }
+
+
         @GetMapping("/logout")
         public String logout() {
             return "redirect:/login";
@@ -24,10 +25,6 @@ public class QuizController {
             return "login";
         }
 
-        @GetMapping("/student_class")
-        public String student_class() {
-            return "student_class";
-        }
 
     @PostMapping("/login")
     public String loginUser(@RequestParam String name,
@@ -67,24 +64,27 @@ public class QuizController {
             return "teacher"; // returns teacher.html
         }
 
+
+        @GetMapping("/teacher/teacher_classlist")
+        public String teacherClasslist() {
+            return "teacher_classlist";
+        }
+
+        @GetMapping("/teacher/teacher_classlist/results")
+        public String teacherQuizResults() {
+            return "teacher_insidequiz_result";
+        }
+
+
         @GetMapping("/student")
         public String studentPage() {
             return "student"; // returns user.html
         }
-        @GetMapping("/class")
-        public String classPage() {
-            return "class"; // returns user.html
-        }
-        @GetMapping("/classlist")
-        public String classlistPage() {
-            return "classlist"; // returns user.html
-        }
-        @GetMapping("/insidequiz")
-        public String insidequizPage() {
-            return "insidequiz"; // returns user.html
-        }
 
-
+        @GetMapping("student/student_class")
+        public String studentClass() {
+            return "student_class"; // returns user.html
+        }
 
 
 }
