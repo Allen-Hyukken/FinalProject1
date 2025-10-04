@@ -26,13 +26,13 @@ public class QuizController {
         }
 
 
-    @PostMapping("/login")
-    public String loginUser(@RequestParam String name,
-                               @RequestParam String email,
-                               @RequestParam String password,
-                               Model model) {
-            return "student";
-    }
+        @PostMapping("/login")
+        public String loginUser(@RequestParam String name,
+                                   @RequestParam String email,
+                                   @RequestParam String password,
+                                   Model model) {
+                return "student";
+        }
 
         @GetMapping("/register")
         public String register() {
@@ -61,9 +61,8 @@ public class QuizController {
 
         @GetMapping("/teacher")
         public String teacherPage() {
-            return "teacher"; // returns teacher.html
+            return "teacher";
         }
-
 
         @GetMapping("/teacher/teacher_classlist")
         public String teacherClasslist() {
@@ -80,6 +79,11 @@ public class QuizController {
             return "teacherquiz";
         }
 
+        @GetMapping("/teacher/teacher_classlist/teacher_quizedit")
+        public String teacher_quizeditClass() {
+            return "teacher_quizedit";
+        }
+
 
         @GetMapping("/student")
         public String studentPage() {
@@ -90,18 +94,18 @@ public class QuizController {
         public String studentClass() {
             return "student_class"; // returns user.html
         }
-        @GetMapping("/profile")
-        public String profileClass() {
-            return "profile"; // returns user.html
-        }
-        @GetMapping("/teacher/teacher_classlist/teacher_quizedit")
-        public String teacher_quizeditClass() {
-            return "teacher_quizedit"; // returns user.html
-        }
+
         @GetMapping("/studentquiz")
         public String studentquizClass() {
             return "studentquiz"; // returns user.html
         }
+
+        @GetMapping("/profile")
+        public String profileClass() {
+            return "profile"; // returns user.html
+        }
+
+
 
 
 }
