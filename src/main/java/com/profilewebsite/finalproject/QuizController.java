@@ -90,6 +90,18 @@ public class QuizController {
         public String studentClass() {
             return "student_class"; // returns user.html
         }
+        @GetMapping("/profile")
+        public String profileClass() {
+            return "profile"; // returns user.html
+        }
+        @GetMapping("/teacher/teacher_classlist/teacher_quizedit")
+        public String teacher_quizeditClass() {
+            return "teacher_quizedit"; // returns user.html
+        }
+        @GetMapping("/studentquiz")
+        public String studentquizClass() {
+            return "studentquiz"; // returns user.html
+        }
 
 
 }
