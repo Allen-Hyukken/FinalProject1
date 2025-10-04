@@ -79,8 +79,8 @@ public class QuizController {
             return "teacherquiz";
         }
 
-        @GetMapping("/teacher/teacher_classlist/teacher_quizedit")
-        public String teacher_quizeditClass() {
+        @GetMapping("/teacher/teacher_classlist/edit_quiz")
+        public String teacherEditQuiz() {
             return "teacher_quizedit";
         }
 
@@ -90,13 +90,13 @@ public class QuizController {
             return "student"; // returns user.html
         }
 
-        @GetMapping("student/student_class")
+        @GetMapping("/student/student_class")
         public String studentClass() {
             return "student_class"; // returns user.html
         }
 
-        @GetMapping("/studentquiz")
-        public String studentquizClass() {
+        @GetMapping("/student/student_clas/student_quiz")
+        public String studentQuizClass() {
             return "studentquiz"; // returns user.html
         }
 
