@@ -8,7 +8,7 @@ public class QuizController {
 
         @GetMapping("/home")
         public String home() {
-            return "home";
+            return "index";
         }
 
         @GetMapping("/login")
