@@ -24,6 +24,11 @@ public class QuizController {
             return "login";
         }
 
+        @GetMapping("/student_class")
+        public String student_class() {
+            return "student_class";
+        }
+
     @PostMapping("/login")
     public String loginUser(@RequestParam String name,
                                @RequestParam String email,
