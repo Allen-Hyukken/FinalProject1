@@ -75,6 +75,11 @@ public class QuizController {
             return "teacher_insidequiz_result";
         }
 
+        @GetMapping("/teacher/teacher_classlist/create_quiz")
+        public String teacherCreateQuiz() {
+            return "teacherquiz";
+        }
+
 
         @GetMapping("/student")
         public String studentPage() {
