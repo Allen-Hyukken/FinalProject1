@@ -6,29 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <!-- theme meta -->
     <meta name="theme-name" content="quixlab" />
 
-    <title>Quixlab - Bootstrap Admin Dashboard Template</title>
-    <!-- Favicon icon -->
+    <title>Quiz Results - Student Performance</title>
     <link rel="icon" type="image/png" sizes="16x16" th:href="@{/images/favicon.png}">
 
-    <!-- Pignose Calendar -->
     <link th:href="@{/plugins/pg-calendar/css/pignose.calendar.min.css}" rel="stylesheet">
-
-    <!-- Chartist -->
     <link th:href="@{/plugins/chartist/css/chartist.min.css}" rel="stylesheet">
     <link th:href="@{/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css}" rel="stylesheet">
-
-    <!-- Custom Stylesheet -->
     <link th:href="@{/css/style.css}" rel="stylesheet">
 </head>
 
 <body>
-
-<!--*******************
-    Preloader start
-********************-->
 <div id="preloader">
     <div class="loader">
         <svg class="circular" viewBox="25 25 50 50">
@@ -36,59 +25,28 @@
         </svg>
     </div>
 </div>
-<!--*******************
-    Preloader end
-********************-->
 
-<!--**********************************
-    Main wrapper start
-***********************************-->
 <div id="main-wrapper">
 
-    <!--**********************************
-        Nav header start
-    ***********************************-->
     <div class="nav-header">
         <div class="brand-logo">
             <a th:href="@{/}">
                 <b class="logo-abbr"><img th:src="@{/images/logo.png}" alt=""> </b>
                 <span class="logo-compact"><img th:src="@{/images/logo-compact.png}" alt=""></span>
-                <span class="brand-title">
-                        <img th:src="@{/images/logo-text.png}" alt="">
-                    </span>
+                <span class="brand-title"><img th:src="@{/images/logo-text.png}" alt=""></span>
             </a>
         </div>
     </div>
-    <!--**********************************
-        Nav header end
-    ***********************************-->
 
-    <!--**********************************
-        Header start
-    ***********************************-->
     <div th:replace="fragments/header :: header"></div>
-    <!--**********************************
-        Header end
-    ***********************************-->
 
-    <!--**********************************
-        Sidebar start
-    ***********************************-->
-
-    <!--**********************************
-        Sidebar end
-    ***********************************-->
-
-    <!--**********************************
-        Content body start
-    ***********************************-->
     <div class="content-body">
-        <div class="row  mx-0">
+        <div class="row mx-0">
             <div class="col p-md-0">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/teacher">Home</a></li>
                     <li class="breadcrumb-item active"><a href="/teacher/teacher_classlist">Class</a></li>
-                    <li class="breadcrumb-item active"><a href="/teacher/teacher_classlist/results">Quiz_Results</a></li>
+                    <li class="breadcrumb-item active"><a href="/teacher/teacher_classlist/results">Quiz Results</a></li>
                 </ol>
             </div>
         </div>
@@ -96,431 +54,113 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Quiz Results: </h4>
+                    <h4 class="card-title">Quiz Results Summary</h4>
+                    <p class="text-muted">Below are the scores and performance results of students for the recent quiz.</p>
                     <div class="table-responsive">
                         <table class="table header-border">
                             <thead>
                             <tr>
                                 <th>Class</th>
-                                <th>Full name</th>
+                                <th>Student Name</th>
                                 <th>Subject</th>
-                                <th>Quiz time in and out</th>
-                                <th>Results</th>
+                                <th>Quiz Duration</th>
+                                <th>Status</th>
                                 <th>Score</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td><a href="javascript:void(0)">BTVTEICT-CP</a></td>
+                                <td><a href="#">ICT 11 - A</a></td>
                                 <td>Benedict Karl G. Rosas</td>
-                                <td><span class="text-muted">Comprog II</span></td>
-                                <td>2:30 - 4:30</td>
+                                <td><span class="text-muted">Computer Programming II</span></td>
+                                <td>2:30 PM - 4:30 PM</td>
                                 <td><span class="label gradient-1 rounded">Passed</span></td>
-                                <td>50</td>
+                                <td>48 / 50</td>
                             </tr>
                             <tr>
-                                <td><a href="javascript:void(0)">BTVTEICT-CP</a></td>
-                                <td>Aren decain Odang</td>
-                                <td><span class="text-muted">COMPROG II</span></td>
-                                <td>2:30 - 3:00</td>
-                                <td><span class="label gradient-2 rounded">Faileds</span></td>
-                                <td>22</td>
+                                <td><a href="#">ICT 11 - A</a></td>
+                                <td>Aren Decain Odang</td>
+                                <td><span class="text-muted">Computer Programming II</span></td>
+                                <td>2:30 PM - 3:00 PM</td>
+                                <td><span class="label gradient-2 rounded">Failed</span></td>
+                                <td>22 / 50</td>
                             </tr>
                             <tr>
-                                <td><a href="javascript:void(0)">Order #98458</a></td>
+                                <td><a href="#">STEM 12 - B</a></td>
                                 <td>Caleb Richards</td>
-                                <td><span class="text-muted">May 18, 2017</span></td>
-                                <td>$38.00</td>
-                                <td><span class="label gradient-4 rounded">Shipped</span></td>
-                                <td>AU</td>
+                                <td><span class="text-muted">General Mathematics</span></td>
+                                <td>9:00 AM - 9:45 AM</td>
+                                <td><span class="label gradient-3 rounded">Passed</span></td>
+                                <td>39 / 50</td>
                             </tr>
                             <tr>
-                                <td><a href="javascript:void(0)">Order #32658</a></td>
+                                <td><a href="#">ABM 11 - C</a></td>
                                 <td>June Lane</td>
-                                <td><span class="text-muted">Apr 28, 2017</span></td>
-                                <td>$77.99</td>
-                                <td><span class="label gradient-2 rounded">Paid</span></td>
-                                <td>FR</td>
+                                <td><span class="text-muted">Business Management</span></td>
+                                <td>10:00 AM - 10:30 AM</td>
+                                <td><span class="label gradient-1 rounded">Passed</span></td>
+                                <td>45 / 50</td>
                             </tr>
                             <tr>
-                                <td><a href="javascript:void(0)">Order #26589</a></td>
-                                <td>Herman Beck</td>
-                                <td><span class="text-muted">Oct 16, 2017</span></td>
-                                <td>$45.00</td>
-                                <td><span class="label gradient-1 rounded">Paid</span></td>
-                                <td>EN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #58746</a></td>
+                                <td><a href="#">HUMSS 12 - D</a></td>
                                 <td>Mary Adams</td>
-                                <td><span class="text-muted">Oct 12, 2017</span></td>
-                                <td>$245.30</td>
-                                <td><span class="label gradient-2 rounded">Shipped</span></td>
-                                <td>CN</td>
+                                <td><span class="text-muted">Philosophy</span></td>
+                                <td>8:00 AM - 8:40 AM</td>
+                                <td><span class="label gradient-2 rounded">Failed</span></td>
+                                <td>28 / 50</td>
                             </tr>
                             <tr>
-                                <td><a href="javascript:void(0)">Order #98458</a></td>
-                                <td>Caleb Richards</td>
-                                <td><span class="text-muted">May 18, 2017</span></td>
-                                <td>$38.00</td>
-                                <td><span class="label gradient-4 rounded">Shipped</span></td>
-                                <td>AU</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #32658</a></td>
-                                <td>June Lane</td>
-                                <td><span class="text-muted">Apr 28, 2017</span></td>
-                                <td>$77.99</td>
-                                <td><span class="label gradient-2 rounded">Paid</span></td>
-                                <td>FR</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #26589</a></td>
+                                <td><a href="#">TVL 10 - E</a></td>
                                 <td>Herman Beck</td>
-                                <td><span class="text-muted">Oct 16, 2017</span></td>
-                                <td>$45.00</td>
-                                <td><span class="label gradient-1 rounded">Paid</span></td>
-                                <td>EN</td>
+                                <td><span class="text-muted">Electrical Installation</span></td>
+                                <td>3:15 PM - 3:45 PM</td>
+                                <td><span class="label gradient-1 rounded">Passed</span></td>
+                                <td>41 / 50</td>
                             </tr>
                             <tr>
-                                <td><a href="javascript:void(0)">Order #58746</a></td>
-                                <td>Mary Adams</td>
-                                <td><span class="text-muted">Oct 12, 2017</span></td>
-                                <td>$245.30</td>
-                                <td><span class="label gradient-2 rounded">Shipped</span></td>
-                                <td>CN</td>
+                                <td><a href="#">GAS 12 - F</a></td>
+                                <td>Ella Santos</td>
+                                <td><span class="text-muted">Oral Communication</span></td>
+                                <td>11:00 AM - 11:40 AM</td>
+                                <td><span class="label gradient-1 rounded">Passed</span></td>
+                                <td>46 / 50</td>
                             </tr>
                             <tr>
-                                <td><a href="javascript:void(0)">Order #98458</a></td>
-                                <td>Caleb Richards</td>
-                                <td><span class="text-muted">May 18, 2017</span></td>
-                                <td>$38.00</td>
-                                <td><span class="label gradient-4 rounded">Shipped</span></td>
-                                <td>AU</td>
+                                <td><a href="#">ICT 11 - A</a></td>
+                                <td>Lucas Tan</td>
+                                <td><span class="text-muted">Computer Programming II</span></td>
+                                <td>2:00 PM - 2:40 PM</td>
+                                <td><span class="label gradient-2 rounded">Failed</span></td>
+                                <td>25 / 50</td>
                             </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #32658</a></td>
-                                <td>June Lane</td>
-                                <td><span class="text-muted">Apr 28, 2017</span></td>
-                                <td>$77.99</td>
-                                <td><span class="label gradient-2 rounded">Paid</span></td>
-                                <td>FR</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #26589</a></td>
-                                <td>Herman Beck</td>
-                                <td><span class="text-muted">Oct 16, 2017</span></td>
-                                <td>$45.00</td>
-                                <td><span class="label gradient-1 rounded">Paid</span></td>
-                                <td>EN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #58746</a></td>
-                                <td>Mary Adams</td>
-                                <td><span class="text-muted">Oct 12, 2017</span></td>
-                                <td>$245.30</td>
-                                <td><span class="label gradient-2 rounded">Shipped</span></td>
-                                <td>CN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #98458</a></td>
-                                <td>Caleb Richards</td>
-                                <td><span class="text-muted">May 18, 2017</span></td>
-                                <td>$38.00</td>
-                                <td><span class="label gradient-4 rounded">Shipped</span></td>
-                                <td>AU</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #32658</a></td>
-                                <td>June Lane</td>
-                                <td><span class="text-muted">Apr 28, 2017</span></td>
-                                <td>$77.99</td>
-                                <td><span class="label gradient-2 rounded">Paid</span></td>
-                                <td>FR</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #26589</a></td>
-                                <td>Herman Beck</td>
-                                <td><span class="text-muted">Oct 16, 2017</span></td>
-                                <td>$45.00</td>
-                                <td><span class="label gradient-1 rounded">Paid</span></td>
-                                <td>EN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #58746</a></td>
-                                <td>Mary Adams</td>
-                                <td><span class="text-muted">Oct 12, 2017</span></td>
-                                <td>$245.30</td>
-                                <td><span class="label gradient-2 rounded">Shipped</span></td>
-                                <td>CN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #98458</a></td>
-                                <td>Caleb Richards</td>
-                                <td><span class="text-muted">May 18, 2017</span></td>
-                                <td>$38.00</td>
-                                <td><span class="label gradient-4 rounded">Shipped</span></td>
-                                <td>AU</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #32658</a></td>
-                                <td>June Lane</td>
-                                <td><span class="text-muted">Apr 28, 2017</span></td>
-                                <td>$77.99</td>
-                                <td><span class="label gradient-2 rounded">Paid</span></td>
-                                <td>FR</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #26589</a></td>
-                                <td>Herman Beck</td>
-                                <td><span class="text-muted">Oct 16, 2017</span></td>
-                                <td>$45.00</td>
-                                <td><span class="label gradient-1 rounded">Paid</span></td>
-                                <td>EN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #58746</a></td>
-                                <td>Mary Adams</td>
-                                <td><span class="text-muted">Oct 12, 2017</span></td>
-                                <td>$245.30</td>
-                                <td><span class="label gradient-2 rounded">Shipped</span></td>
-                                <td>CN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #98458</a></td>
-                                <td>Caleb Richards</td>
-                                <td><span class="text-muted">May 18, 2017</span></td>
-                                <td>$38.00</td>
-                                <td><span class="label gradient-4 rounded">Shipped</span></td>
-                                <td>AU</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #32658</a></td>
-                                <td>June Lane</td>
-                                <td><span class="text-muted">Apr 28, 2017</span></td>
-                                <td>$77.99</td>
-                                <td><span class="label gradient-2 rounded">Paid</span></td>
-                                <td>FR</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #26589</a></td>
-                                <td>Herman Beck</td>
-                                <td><span class="text-muted">Oct 16, 2017</span></td>
-                                <td>$45.00</td>
-                                <td><span class="label gradient-1 rounded">Paid</span></td>
-                                <td>EN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #58746</a></td>
-                                <td>Mary Adams</td>
-                                <td><span class="text-muted">Oct 12, 2017</span></td>
-                                <td>$245.30</td>
-                                <td><span class="label gradient-2 rounded">Shipped</span></td>
-                                <td>CN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #98458</a></td>
-                                <td>Caleb Richards</td>
-                                <td><span class="text-muted">May 18, 2017</span></td>
-                                <td>$38.00</td>
-                                <td><span class="label gradient-4 rounded">Shipped</span></td>
-                                <td>AU</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #32658</a></td>
-                                <td>June Lane</td>
-                                <td><span class="text-muted">Apr 28, 2017</span></td>
-                                <td>$77.99</td>
-                                <td><span class="label gradient-2 rounded">Paid</span></td>
-                                <td>FR</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #26589</a></td>
-                                <td>Herman Beck</td>
-                                <td><span class="text-muted">Oct 16, 2017</span></td>
-                                <td>$45.00</td>
-                                <td><span class="label gradient-1 rounded">Paid</span></td>
-                                <td>EN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #58746</a></td>
-                                <td>Mary Adams</td>
-                                <td><span class="text-muted">Oct 12, 2017</span></td>
-                                <td>$245.30</td>
-                                <td><span class="label gradient-2 rounded">Shipped</span></td>
-                                <td>CN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #98458</a></td>
-                                <td>Caleb Richards</td>
-                                <td><span class="text-muted">May 18, 2017</span></td>
-                                <td>$38.00</td>
-                                <td><span class="label gradient-4 rounded">Shipped</span></td>
-                                <td>AU</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #32658</a></td>
-                                <td>June Lane</td>
-                                <td><span class="text-muted">Apr 28, 2017</span></td>
-                                <td>$77.99</td>
-                                <td><span class="label gradient-2 rounded">Paid</span></td>
-                                <td>FR</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #26589</a></td>
-                                <td>Herman Beck</td>
-                                <td><span class="text-muted">Oct 16, 2017</span></td>
-                                <td>$45.00</td>
-                                <td><span class="label gradient-1 rounded">Paid</span></td>
-                                <td>EN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #58746</a></td>
-                                <td>Mary Adams</td>
-                                <td><span class="text-muted">Oct 12, 2017</span></td>
-                                <td>$245.30</td>
-                                <td><span class="label gradient-2 rounded">Shipped</span></td>
-                                <td>CN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #98458</a></td>
-                                <td>Caleb Richards</td>
-                                <td><span class="text-muted">May 18, 2017</span></td>
-                                <td>$38.00</td>
-                                <td><span class="label gradient-4 rounded">Shipped</span></td>
-                                <td>AU</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #32658</a></td>
-                                <td>June Lane</td>
-                                <td><span class="text-muted">Apr 28, 2017</span></td>
-                                <td>$77.99</td>
-                                <td><span class="label gradient-2 rounded">Paid</span></td>
-                                <td>FR</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #26589</a></td>
-                                <td>Herman Beck</td>
-                                <td><span class="text-muted">Oct 16, 2017</span></td>
-                                <td>$45.00</td>
-                                <td><span class="label gradient-1 rounded">Paid</span></td>
-                                <td>EN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #58746</a></td>
-                                <td>Mary Adams</td>
-                                <td><span class="text-muted">Oct 12, 2017</span></td>
-                                <td>$245.30</td>
-                                <td><span class="label gradient-2 rounded">Shipped</span></td>
-                                <td>CN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #98458</a></td>
-                                <td>Caleb Richards</td>
-                                <td><span class="text-muted">May 18, 2017</span></td>
-                                <td>$38.00</td>
-                                <td><span class="label gradient-4 rounded">Shipped</span></td>
-                                <td>AU</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #32658</a></td>
-                                <td>June Lane</td>
-                                <td><span class="text-muted">Apr 28, 2017</span></td>
-                                <td>$77.99</td>
-                                <td><span class="label gradient-2 rounded">Paid</span></td>
-                                <td>FR</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #26589</a></td>
-                                <td>Herman Beck</td>
-                                <td><span class="text-muted">Oct 16, 2017</span></td>
-                                <td>$45.00</td>
-                                <td><span class="label gradient-1 rounded">Paid</span></td>
-                                <td>EN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #58746</a></td>
-                                <td>Mary Adams</td>
-                                <td><span class="text-muted">Oct 12, 2017</span></td>
-                                <td>$245.30</td>
-                                <td><span class="label gradient-2 rounded">Shipped</span></td>
-                                <td>CN</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #98458</a></td>
-                                <td>Caleb Richards</td>
-                                <td><span class="text-muted">May 18, 2017</span></td>
-                                <td>$38.00</td>
-                                <td><span class="label gradient-4 rounded">Shipped</span></td>
-                                <td>AU</td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0)">Order #32658</a></td>
-                                <td>June Lane</td>
-                                <td><span class="text-muted">Apr 28, 2017</span></td>
-                                <td>$77.99</td>
-                                <td><span class="label gradient-2 rounded">Paid</span></td>
-                                <td>FR</td>
-                            </tr>
-
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
-        <!-- Your page content here -->
     </div>
-    <!--**********************************
-        Content body end
-    ***********************************-->
 
-    <!--**********************************
-        Footer start
-    ***********************************-->
     <div th:replace="fragments/footer :: footer"></div>
-    <!--**********************************
-        Footer end
-    ***********************************-->
 </div>
-<!--**********************************
-    Main wrapper end
-***********************************-->
 
-<!--**********************************
-    Scripts
-***********************************-->
 <script th:src="@{/plugins/common/common.min.js}"></script>
 <script th:src="@{/js/custom.min.js}"></script>
 <script th:src="@{/js/settings.js}"></script>
 <script th:src="@{/js/gleek.js}"></script>
 <script th:src="@{/js/styleSwitcher.js}"></script>
-
-<!-- Chartjs -->
 <script th:src="@{/plugins/chart.js/Chart.bundle.min.js}"></script>
-<!-- Circle progress -->
 <script th:src="@{/plugins/circle-progress/circle-progress.min.js}"></script>
-<!-- Datamap -->
 <script th:src="@{/plugins/d3v3/index.js}"></script>
 <script th:src="@{/plugins/topojson/topojson.min.js}"></script>
 <script th:src="@{/plugins/datamaps/datamaps.world.min.js}"></script>
-<!-- Morrisjs -->
 <script th:src="@{/plugins/raphael/raphael.min.js}"></script>
 <script th:src="@{/plugins/morris/morris.min.js}"></script>
-<!-- Pignose Calendar -->
 <script th:src="@{/plugins/moment/moment.min.js}"></script>
 <script th:src="@{/plugins/pg-calendar/js/pignose.calendar.min.js}"></script>
-<!-- ChartistJS -->
 <script th:src="@{/plugins/chartist/js/chartist.min.js}"></script>
 <script th:src="@{/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js}"></script>
-
-<!-- Dashboard Script -->
 <script th:src="@{/js/dashboard/dashboard-1.js}"></script>
 
 </body>
-
 </html>

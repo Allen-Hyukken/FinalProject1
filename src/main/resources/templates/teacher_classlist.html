@@ -6,29 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <!-- theme meta -->
     <meta name="theme-name" content="quixlab" />
 
-    <title>Quixlab - Bootstrap Admin Dashboard Template</title>
-    <!-- Favicon icon -->
+    <title>Teacher Dashboard - Quiz List</title>
     <link rel="icon" type="image/png" sizes="16x16" th:href="@{/images/favicon.png}">
 
-    <!-- Pignose Calendar -->
     <link th:href="@{/plugins/pg-calendar/css/pignose.calendar.min.css}" rel="stylesheet">
-
-    <!-- Chartist -->
     <link th:href="@{/plugins/chartist/css/chartist.min.css}" rel="stylesheet">
     <link th:href="@{/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css}" rel="stylesheet">
-
-    <!-- Custom Stylesheet -->
     <link th:href="@{/css/style.css}" rel="stylesheet">
 </head>
 
 <body>
-
-<!--*******************
-    Preloader start
-********************-->
 <div id="preloader">
     <div class="loader">
         <svg class="circular" viewBox="25 25 50 50">
@@ -36,262 +25,212 @@
         </svg>
     </div>
 </div>
-<!--*******************
-    Preloader end
-********************-->
 
-<!--**********************************
-    Main wrapper start
-***********************************-->
 <div id="main-wrapper">
 
-    <!--**********************************
-        Nav header start
-    ***********************************-->
     <div class="nav-header">
         <div class="brand-logo">
             <a th:href="@{/}">
                 <b class="logo-abbr"><img th:src="@{/images/logo.png}" alt=""> </b>
                 <span class="logo-compact"><img th:src="@{/images/logo-compact.png}" alt=""></span>
                 <span class="brand-title">
-                        <img th:src="@{/images/logo-text.png}" alt="">
-                    </span>
+                    <img th:src="@{/images/logo-text.png}" alt="">
+                </span>
             </a>
         </div>
     </div>
-    <!--**********************************
-        Nav header end
-    ***********************************-->
 
-    <!--**********************************
-        Header start
-    ***********************************-->
     <div th:replace="fragments/header :: header"></div>
-    <!--**********************************
-        Header end
-    ***********************************-->
 
-    <!--**********************************
-        Sidebar start
-    ***********************************-->
-
-    <!--**********************************
-        Sidebar end
-    ***********************************-->
-
-    <!--**********************************
-        Content body start
-    ***********************************-->
     <div class="content-body">
         <div class="row mx-0">
             <div class="col p-md-0">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/teacher">Home</a></li>
                     <li class="breadcrumb-item active"><a href="/teacher/teacher_classlist">Class</a></li>
+
                 </ol>
             </div>
         </div>
 
-
         <div class="container-fluid">
-                <!-- Row with Table A and B -->
-                <div class="row">
-                    <div class="col">
-                        <div class="card">
-                            <form  class="card" action="/teacher/teacher_classlist/create_quiz" method="get">
-                                <button type="submit" class="btn mb-1 btn-success">Success</button>
-                            </form>>
-                            <div class="card-body">
-                                <h4 class="card-title">QUIZ LIST</h4>
-                                <div class="row m-b-30">
-                                    <div class="col-lg-6">
-                                        <div class="card border-primary">
-                                            <div class="card-header">ITCC122</div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">COM PROG 2 QUIZ</h5>
-                                                <p class="card-text">Patrcik Justin Ariado</p><a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
-                                                <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
-                                            </div>
-                                            <div class="card-footer"><small>Last updated 3 min ago</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="card border-primary">
-                                            <div class="card-header">GEC11A</div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Enviromental Science Quiz</h5>
-                                                <p class="card-text">Ron Eric Legaspi</p><a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
-                                                <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
-                                            </div>
-                                            <div class="card-footer"><small>Last updated 40 min ago</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="card border-primary">
-                                            <div class="card-header">ITM211 CP2</div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Information Management</h5>
-                                                <p class="card-text">Patrick Justin Ariado</p><a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
-                                                <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
-                                            </div>
-                                            <div class="card-footer"><small>Last updateed 1 hour min ago</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="card border-primary">
-                                            <div class="card-header">BTVTEICT-CP</div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Gender and Scoiety</h5>
-                                                <p class="card-text">Anna Tanto</p><a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
-                                                <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
-                                            </div>
-                                            <div class="card-footer"><small>Last updated 1 week ago</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="card border-primary">
-                                            <div class="card-header">Header</div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Primary card title</h5>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p><a href="/teacher/teacher_classlist/results" class="btn btn-primary">Go somewhere</a>
-                                                <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
-                                            </div>
-                                            <div class="card-footer"><small>Last updateed 3 min ago</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="card border-primary">
-                                            <div class="card-header">Header</div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Primary card title</h5>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p><a href="/teacher/teacher_classlist/results" class="btn btn-primary">Go somewhere</a>
-                                                <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
-                                            </div>
-                                            <div class="card-footer"><small>Last updateed 3 min ago</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="card border-primary">
-                                            <div class="card-header">Header</div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Primary card title</h5>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p><a href="/teacher/teacher_classlist/results" class="btn btn-primary">Go somewhere</a>
-                                                <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
-                                            </div>
-                                            <div class="card-footer"><small>Last updateed 3 min ago</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="card border-primary">
-                                            <div class="card-header">Header</div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Primary card title</h5>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p><a href="/teacher/teacher_classlist/results" class="btn btn-primary">Go somewhere</a>
-                                                <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
-                                            </div>
-                                            <div class="card-footer"><small>Last updateed 3 min ago</small>
-                                            </div>
-                                        </div>
-                                    </div>
 
+            <!-- Quiz Section -->
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <form class="card" action="/teacher/teacher_classlist/create_quiz" method="get">
+                            <button type="submit" class="btn mb-1 btn-success">CREATE NEW QUIZ</button>
+                        </form>
 
+                        <div class="card-body">
+                            <h4 class="card-title">AVAILABLE QUIZZES</h4>
+                            <p class="text-muted">Here are the quizzes created for your classes. You can view results or make edits as needed.</p>
 
+                            <div class="row m-b-30">
 
-
-
+                                <!-- Quiz 1 -->
+                                <div class="col-lg-6">
+                                    <div class="card border-primary">
+                                        <div class="card-header">ITCC122</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Computer Programming II - Quiz 1</h5>
+                                            <p class="card-text">Instructor: Patrick Justin Ariado</p>
+                                            <a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
+                                            <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
+                                        </div>
+                                        <div class="card-footer"><small>Last updated 3 minutes ago</small></div>
+                                    </div>
                                 </div>
+
+                                <!-- Quiz 2 -->
+                                <div class="col-lg-6">
+                                    <div class="card border-primary">
+                                        <div class="card-header">GEC11A</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Environmental Science - Quiz 1</h5>
+                                            <p class="card-text">Instructor: Ron Eric Legaspi</p>
+                                            <a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
+                                            <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
+                                        </div>
+                                        <div class="card-footer"><small>Last updated 40 minutes ago</small></div>
+                                    </div>
+                                </div>
+
+                                <!-- Quiz 3 -->
+                                <div class="col-lg-6">
+                                    <div class="card border-primary">
+                                        <div class="card-header">ITM211 CP2</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Information Management - Quiz 2</h5>
+                                            <p class="card-text">Instructor: Patrick Justin Ariado</p>
+                                            <a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
+                                            <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
+                                        </div>
+                                        <div class="card-footer"><small>Last updated 1 hour ago</small></div>
+                                    </div>
+                                </div>
+
+                                <!-- Quiz 4 -->
+                                <div class="col-lg-6">
+                                    <div class="card border-primary">
+                                        <div class="card-header">BTVTEICT-CP</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Gender and Society - Quiz 1</h5>
+                                            <p class="card-text">Instructor: Anna Tanto</p>
+                                            <a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
+                                            <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
+                                        </div>
+                                        <div class="card-footer"><small>Last updated 1 week ago</small></div>
+                                    </div>
+                                </div>
+
+                                <!-- Quiz 5 (example placeholder) -->
+                                <div class="col-lg-6">
+                                    <div class="card border-primary">
+                                        <div class="card-header">MATH10A</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">General Mathematics - Quiz 1</h5>
+                                            <p class="card-text">Instructor: Juan Dela Cruz</p>
+                                            <a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
+                                            <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
+                                        </div>
+                                        <div class="card-footer"><small>Last updated 3 days ago</small></div>
+                                    </div>
+                                </div>
+
+                                <!-- Quiz 6 (example placeholder) -->
+                                <div class="col-lg-6">
+                                    <div class="card border-primary">
+                                        <div class="card-header">ENG12B</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Oral Communication - Quiz 2</h5>
+                                            <p class="card-text">Instructor: Clara Santos</p>
+                                            <a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
+                                            <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
+                                        </div>
+                                        <div class="card-footer"><small>Last updated 2 hours ago</small></div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-
-                <!-- Row with Column 2 (full width below) -->
-                <div class="row mt-3">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">CLASS PARTICIPANTS</h4>
-                                <div class="table-responsive">
-                                    <table class="table header-border">
-                                        <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>First</th>
-                                            <th>Last</th>
-                                            <th>User</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <th>1</th>
-                                            <td>William</td>
-                                            <td>Marks</td>
-                                            <td>@william</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+            <!-- Class Participants Table -->
+            <div class="row mt-3">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">CLASS PARTICIPANTS</h4>
+                            <p class="text-muted">List of enrolled students for the selected class.</p>
+                            <div class="table-responsive">
+                                <table class="table header-border">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>William</td>
+                                        <td>Marks</td>
+                                        <td>@william</td>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <td>Aren</td>
+                                        <td>Odang</td>
+                                        <td>@arenodang</td>
+                                    </tr>
+                                    <tr>
+                                        <th>3</th>
+                                        <td>Benedict</td>
+                                        <td>Rosas</td>
+                                        <td>@benedict</td>
+                                    </tr>
+                                    <tr>
+                                        <th>4</th>
+                                        <td>Mary</td>
+                                        <td>Adams</td>
+                                        <td>@madams</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
-        <!-- Your page content here -->
     </div>
-    <!--**********************************
-        Content body end
-    ***********************************-->
 
-    <!--**********************************
-        Footer start
-    ***********************************-->
     <div th:replace="fragments/footer :: footer"></div>
-    <!--**********************************
-        Footer end
-    ***********************************-->
 </div>
-<!--**********************************
-    Main wrapper end
-***********************************-->
 
-<!--**********************************
-    Scripts
-***********************************-->
 <script th:src="@{/plugins/common/common.min.js}"></script>
 <script th:src="@{/js/custom.min.js}"></script>
 <script th:src="@{/js/settings.js}"></script>
 <script th:src="@{/js/gleek.js}"></script>
 <script th:src="@{/js/styleSwitcher.js}"></script>
-
-<!-- Chartjs -->
 <script th:src="@{/plugins/chart.js/Chart.bundle.min.js}"></script>
-<!-- Circle progress -->
 <script th:src="@{/plugins/circle-progress/circle-progress.min.js}"></script>
-<!-- Datamap -->
 <script th:src="@{/plugins/d3v3/index.js}"></script>
 <script th:src="@{/plugins/topojson/topojson.min.js}"></script>
 <script th:src="@{/plugins/datamaps/datamaps.world.min.js}"></script>
-<!-- Morrisjs -->
 <script th:src="@{/plugins/raphael/raphael.min.js}"></script>
 <script th:src="@{/plugins/morris/morris.min.js}"></script>
-<!-- Pignose Calendar -->
 <script th:src="@{/plugins/moment/moment.min.js}"></script>
 <script th:src="@{/plugins/pg-calendar/js/pignose.calendar.min.js}"></script>
-<!-- ChartistJS -->
 <script th:src="@{/plugins/chartist/js/chartist.min.js}"></script>
 <script th:src="@{/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js}"></script>
-
-<!-- Dashboard Script -->
 <script th:src="@{/js/dashboard/dashboard-1.js}"></script>
 
 </body>
-
 </html>

@@ -9,7 +9,7 @@
     <!-- theme meta -->
     <meta name="theme-name" content="quixlab" />
 
-    <title>Quixlab - Bootstrap Admin Dashboard Template</title>
+    <title>Teacher Dashboard - My Classes</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" th:href="@{/images/favicon.png}">
 
@@ -54,8 +54,8 @@
                 <b class="logo-abbr"><img th:src="@{/images/logo.png}" alt=""> </b>
                 <span class="logo-compact"><img th:src="@{/images/logo-compact.png}" alt=""></span>
                 <span class="brand-title">
-                        <img th:src="@{/images/logo-text.png}" alt="">
-                    </span>
+                    <img th:src="@{/images/logo-text.png}" alt="">
+                </span>
             </a>
         </div>
     </div>
@@ -72,183 +72,168 @@
     ***********************************-->
 
     <!--**********************************
-        Sidebar start
-    ***********************************-->
-
-    <!--**********************************
-        Sidebar end
-    ***********************************-->
-
-    <!--**********************************
         Content body start
     ***********************************-->
     <div class="content-body">
-        <div class="row  mx-0">
+        <div class="row mx-0">
             <div class="col p-md-0">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/teacher">Home</a></li>
                 </ol>
             </div>
         </div>
-        <!-- Your page content here -->
+
         <div class="container-fluid">
             <div class="col-lg-5">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Make a class</h5>
-                    <form action="/teacher" method="get">
-                        <div class="form-group">
-                            <input type="text" class="form-control input-rounded" placeholder="Class Name">
-                        </div>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="classPic">
-                            <label class="custom-file-label" for="classPic">Class Picture</label>
-                        </div>
-                        <div class="container-fluid">
-                            <button type="submit" class="btn mb-1 btn-success">Create Class</button>
-                        </div>
-
-                    </form>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Create a New Class</h5>
+                        <form action="/teacher" method="get">
+                            <div class="form-group">
+                                <input type="text" class="form-control input-rounded" placeholder="Enter Class Name (e.g., English 10)">
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="classPic">
+                                <label class="custom-file-label" for="classPic">Upload Class Banner</label>
+                            </div>
+                            <div class="container-fluid mt-3">
+                                <button type="submit" class="btn mb-1 btn-success">Create Class</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-
             </div>
-        </div>
 
-        <div class="row">
+            <div class="row">
                 <div class="col">
-                    <h4 class="d-inline">Cards With Footer and Links</h4>
-                    <p class="text-muted">This is 3 column contents</p>
+                    <h3 class="d-inline">My Classes</h3>
+                    <p>Here are the classes you’ve created. Click a class to view students and assignments.</p>
                     <div class="row">
+
+                        <!-- Mathematics -->
                         <div class="col-md-6 col-lg-3">
                             <div class="card">
                                 <img class="img-fluid" src="images/big/img1.jpg" alt="">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text and below as a natural lead-in to the additional content. This content is a little bit longer.</p>
+                                    <h5 class="card-title">Mathematics 10</h5>
+                                    <p class="card-text">Explore algebra, geometry, and trigonometry through engaging lessons and problem-solving.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <p class="card-text d-inline"><small class="text-muted">Last updated 3 mins ago</small>
-                                    </p><a href="/teacher/teacher_classlist" class="card-link float-right"><small>Card link</small></a>
+                                    <p class="card-text d-inline"><small class="text-muted">Updated 5 mins ago</small></p>
+                                    <a href="/teacher/teacher_classlist" class="card-link float-right"><small>View Class</small></a>
                                 </div>
                             </div>
                         </div>
-                        <!-- End Col -->
+
+                        <!-- Science -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card">
+                                <img class="img-fluid" src="images/big/img2.jpg" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">Science 9</h5>
+                                    <p class="card-text">Discover the wonders of biology, chemistry, and physics through hands-on activities.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <p class="card-text d-inline"><small class="text-muted">Updated 10 mins ago</small></p>
+                                    <a href="/teacher/teacher_classlist" class="card-link float-right"><small>View Class</small></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- English -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card">
+                                <img class="img-fluid" src="images/big/img3.jpg" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">English Literature</h5>
+                                    <p class="card-text">Analyze stories and poems to improve reading, writing, and communication skills.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <p class="card-text d-inline"><small class="text-muted">Updated 15 mins ago</small></p>
+                                    <a href="/teacher/teacher_classlist" class="card-link float-right"><small>View Class</small></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- History -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card">
+                                <img class="img-fluid" src="images/big/img4.jpg" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">World History</h5>
+                                    <p class="card-text">Travel through time to explore civilizations and key moments that shaped the world.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <p class="card-text d-inline"><small class="text-muted">Updated 20 mins ago</small></p>
+                                    <a href="/teacher/teacher_classlist" class="card-link float-right"><small>View Class</small></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ICT -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card">
+                                <img class="img-fluid" src="images/big/img5.jpg" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">ICT Fundamentals</h5>
+                                    <p class="card-text">Learn computer concepts, digital literacy, and introductory coding techniques.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <p class="card-text d-inline"><small class="text-muted">Updated 25 mins ago</small></p>
+                                    <a href="/teacher/teacher_classlist" class="card-link float-right"><small>View Class</small></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PE -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card">
+                                <img class="img-fluid" src="images/big/img6.jpg" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">Physical Education</h5>
+                                    <p class="card-text">Stay active and develop teamwork through fitness and recreational activities.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <p class="card-text d-inline"><small class="text-muted">Updated 30 mins ago</small></p>
+                                    <a href="/teacher/teacher_classlist" class="card-link float-right"><small>View Class</small></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Art -->
                         <div class="col-md-6 col-lg-3">
                             <div class="card">
                                 <img class="img-fluid" src="images/big/img1.jpg" alt="">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text and below as a natural lead-in to the additional content. This content is a little bit longer.</p>
+                                    <h5 class="card-title">Art & Design</h5>
+                                    <p class="card-text">Express creativity through visual arts, design projects, and digital media.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <p class="card-text d-inline"><small class="text-muted">Last updated 3 mins ago</small>
-                                    </p><a href="/teacher/teacher_classlist" class="card-link float-right"><small>Card link</small></a>
+                                    <p class="card-text d-inline"><small class="text-muted">Updated 35 mins ago</small></p>
+                                    <a href="/teacher/teacher_classlist" class="card-link float-right"><small>View Class</small></a>
                                 </div>
                             </div>
                         </div>
-                        <!-- End Col -->
+
+                        <!-- Music -->
                         <div class="col-md-6 col-lg-3">
                             <div class="card">
-                                <img class="img-fluid" src="images/big/img1.jpg" alt="">
+                                <img class="img-fluid" src="images/big/img8.jpg" alt="">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text and below as a natural lead-in to the additional content. This content is a little bit longer.</p>
+                                    <h5 class="card-title">Music Theory</h5>
+                                    <p class="card-text">Understand rhythm, melody, and harmony through lessons and performance tasks.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <p class="card-text d-inline"><small class="text-muted">Last updated 3 mins ago</small>
-                                    </p><a href="/teacher/teacher_classlist" class="card-link float-right"><small>Card link</small></a>
+                                    <p class="card-text d-inline"><small class="text-muted">Updated 40 mins ago</small></p>
+                                    <a href="/teacher/teacher_classlist" class="card-link float-right"><small>View Class</small></a>
                                 </div>
                             </div>
                         </div>
-                        <!-- End Col -->
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card">
-                                <img class="img-fluid" src="images/big/img1.jpg" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text and below as a natural lead-in to the additional content. This content is a little bit longer.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <p class="card-text d-inline"><small class="text-muted">Last updated 3 mins ago</small>
-                                    </p><a href="/teacher/teacher_classlist" class="card-link float-right"><small>Card link</small></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Col -->
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card">
-                                <img class="img-fluid" src="images/big/img1.jpg" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text and below as a natural lead-in to the additional content. This content is a little bit longer.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <p class="card-text d-inline"><small class="text-muted">Last updated 3 mins ago</small>
-                                    </p><a href="/teacher/teacher_classlist" class="card-link float-right"><small>Card link</small></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Col -->
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card">
-                                <img class="img-fluid" src="images/big/img1.jpg" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text and below as a natural lead-in to the additional content. This content is a little bit longer.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <p class="card-text d-inline"><small class="text-muted">Last updated 3 mins ago</small>
-                                    </p><a href="/teacher/teacher_classlist" class="card-link float-right"><small>Card link</small></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Col -->
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card">
-                                <img class="img-fluid" src="images/big/img1.jpg" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text and below as a natural lead-in to the additional content. This content is a little bit longer.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <p class="card-text d-inline"><small class="text-muted">Last updated 3 mins ago</small>
-                                    </p><a href="/teacher/teacher_classlist" class="card-link float-right"><small>Card link</small></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Col -->
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card">
-                                <img class="img-fluid" src="images/big/img1.jpg" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text and below as a natural lead-in to the additional content. This content is a little bit longer.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <p class="card-text d-inline"><small class="text-muted">Last updated 3 mins ago</small>
-                                    </p><a href="/teacher/teacher_classlist" class="card-link float-right"><small>Card link</small></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Col -->
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card">
-                                <img class="img-fluid" src="images/big/img1.jpg" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text and below as a natural lead-in to the additional content. This content is a little bit longer.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <p class="card-text d-inline"><small class="text-muted">Last updated 3 mins ago</small>
-                                    </p><a href="/teacher/teacher_classlist" class="card-link float-right"><small>Card link</small></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Col -->
 
                     </div>
                 </div>
             </div>
+        </div>
     </div>
     <!--**********************************
         Content body end
@@ -262,9 +247,6 @@
         Footer end
     ***********************************-->
 </div>
-<!--**********************************
-    Main wrapper end
-***********************************-->
 
 <!--**********************************
     Scripts
@@ -297,5 +279,4 @@
 <script th:src="@{/js/dashboard/dashboard-1.js}"></script>
 
 </body>
-
 </html>
