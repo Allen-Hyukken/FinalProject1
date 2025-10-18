@@ -98,61 +98,17 @@
                     <h4 class="d-inline">Class Name</h4>
                     <h3>Quizzes</h3>
                     <div class="row m-b-30">
-                        <div class="col-lg-6">
-                            <div class="card border-primary">
-                                <div class="card-header">SIR PJ</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">INFORMATION MANAGEMENT Q4</h5>
-                                    <p class="card-text">Coverage: Module 4</p><a href="/student/student_clas/student_quiz" class="btn btn-primary">Answer now</a>
-                                </div>
-                                <div class="card-footer"><small>Last updateed 3 min ago</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="card border-primary">
-                                <div class="card-header">SIR RON</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Enviromental Science Q2</h5>
-                                    <p class="card-text">Coverage: Mopdule 2</p><a href="/student/student_clas/student_quiz" class="btn btn-primary">Answer now</a>
-                                </div>
-                                <div class="card-footer"><small>Last updateed 3 min ago</small>
+                        <div class="row" th:each="q : ${quizzes}">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 th:text="${q.title}">Quiz Title</h5>
+                                        <a th:href="@{|/student/student_class/${q.classRoom != null ? q.classRoom.id : 0}/quiz/${q.id}|}" class="btn btn-primary">Take Quiz</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="card border-primary">
-                                <div class="card-header">SIR PJ</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">IT ELECTIVE Q5</h5>
-                                    <p class="card-text">Coverage: module 5</p><a href="/student/student_clas/student_quiz" class="btn btn-primary">Answer now</a>
-                                </div>
-                                <div class="card-footer"><small>Last updateed 6 min ago</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="card border-primary">
-                                <div class="card-header">SIR PJ</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">LOGIC AND CIRCUIT DESIGN Q3</h5>
-                                    <p class="card-text">COVERAGE: MODULE 3</p><a href="/student/student_clas/student_quiz" class="btn btn-primary">Answer now</a>
-                                </div>
-                                <div class="card-footer"><small>Last updateed 10 hours ago</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="card border-primary">
-                                <div class="card-header">Header</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Primary card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p><a href="/student/student_clas/student_quiz" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                                <div class="card-footer"><small>Last updateed 3 min ago</small>
-                                </div>
-                            </div>
-                        </div>
+
 
 
 

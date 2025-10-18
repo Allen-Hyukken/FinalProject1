@@ -96,122 +96,36 @@
             <div class="col-lg-12">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Input Style</h4>
-                    <p class="text-muted m-b-15 f-s-12">Use the input classes on an <code>.input-default, input-flat, .input-rounded</code> for Default input.</p>
-                    <div class="basic-form">
-                        <form>
-                            <div class="form-group">
-                                <div class="form-check">
-                                    <input type="radio" id="option1" name="q1" class="form-check-input input-default">
-                                    <label class="form-check-label" for="option1">A) Berlin</label>
-                                </div>
-                            </div>
+                      <form th:action="@{|/student/student_class/${quiz.classRoom.id}/quiz/${quiz.id}/submit|}" method="post">
+                          <div th:each="q, qi : ${quiz.questions}">
+                              <h5 th:text="${qi.index + 1} + '. ' + q.text"></h5>
 
-                            <div class="form-group">
-                                <div class="form-check">
-                                    <input type="radio" id="option2" name="q1" class="form-check-input input-flat">
-                                    <label class="form-check-label" for="option2">B) Paris</label>
-                                </div>
-                            </div>
+                              <!-- Multiple Choice -->
+                              <div th:if="${q.type == 'MCQ'}" th:each="c : ${q.choices}">
+                                  <label><input type="radio" th:name="${'q_' + q.id}" th:value="${c.id}"> <span th:text="${c.text}"></span></label>
+                              </div>
 
-                            <div class="form-group">
-                                <div class="form-check">
-                                    <input type="radio" id="option3" name="q1" class="form-check-input input-rounded">
-                                    <label class="form-check-label" for="option3">C) Madrid</label>
-                                </div>
-                            </div>
+                              <!-- True/False -->
+                              <div th:if="${q.type == 'TF'}">
+                                  <label><input type="radio" th:name="${'q_' + q.id}" value="TRUE"> TRUE</label>
+                                  <label><input type="radio" th:name="${'q_' + q.id}" value="FALSE"> FALSE</label>
+                              </div>
 
-                            <div class="form-group">
-                                <div class="form-check">
-                                    <input type="radio" id="option4" name="q1" class="form-check-input input-rounded">
-                                    <label class="form-check-label" for="option4">D) Rome</label>
-                                </div>
-                            </div>
+                              <!-- Identification/Essay -->
+                              <div th:if="${q.type == 'ESSAY' or q.type == 'IDENT'}">
+                                  <textarea th:name="${'q_' + q.id}" class="form-control"></textarea>
+                              </div>
 
-                        </form>
-                    </div>
+                              <hr/>
+                          </div>
+                          <button type="submit" class="btn btn-success">Submit</button>
+                      </form>
+
                   </div>
                 </div>
             </div>
         </div>
-        <div class = "container-fluid">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Please write your answer and why? </h4>
-                        <div class="basic-form">
-                            <form>
-                                <div class="form-group">
-                                    <label>Must be at least 2 paragraphs</label>
-                                    <textarea class="form-control h-150px" rows="6" id="comment"></textarea>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class ="container-fluid">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Check if the statement is True or False</h4>
-                        <div class="basic-form">
-                            <form>
-                                <div class="form-group">
-                                    <div class="radio mb-3">
-                                        <label>
-                                            <input type="radio" name="optradio">TRUE</label>
-                                    </div>
-                                    <div class="radio mb-3">
-                                        <label>
-                                            <input type="radio" name="optradio">FALSE</label>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Identification: Enter Your Answer of the Following statement</h4>
-                        <div class="basic-form">
-                            <form>
-                                <div class="form-group">
-                                  <input class="form-control" type="text" placeholder="Write your answer">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class = container-fluid>
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Enter the Following Code:</h4>
-                        <div class="basic-form">
-                            <form>
-                                <div class="form-group">
-                                    <label>Make sure it has correct syntax</label>
-                                    <textarea class="form-control h-140px" rows="6" id="code"></textarea>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class = container-fluid>
-            <form class="card" action="/student/student_class" method="get">
-                <button type="submit" class="btn mb-1 btn-success">SUBMIT</button>
-            </form>
-        </div>
+
     </div>
 
 

@@ -24,13 +24,7 @@
 <!--*******************
     Preloader start
 ********************-->
-<div id="preloader">
-    <div class="loader">
-        <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
-        </svg>
-    </div>
-</div>
+
 <!--*******************
     Preloader end
 ********************-->
@@ -48,22 +42,22 @@
                             </a>
 
                             <!-- Registration Form -->
-                            <form th:action="@{/register}" method="post" class="mt-5 mb-5 login-input">
+                            <form th:action="@{/register}" th:object="${user}" method="post" class="mt-5 mb-5 login-input">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="name" placeholder="Name" required>
+                                    <input type="text" th:field="*{name}" placeholder="Name" required class="form-control" >
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                                    <input type="email" th:field="*{email}" class="form-control" name="email" placeholder="Email" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" name="password" placeholder="Password" required>
+                                    <input type="password" th:field="*{password}" class="form-control" name="password" placeholder="Password" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="radio-inline mr-3">
-                                        <input type="radio" name="role" value="teacher"> Teacher
+                                        <input type="radio" th:field="*{role}" value="TEACHER"> Teacher
                                     </label>
                                     <label class="radio-inline mr-3">
-                                        <input type="radio" name="role" value="student"> Student
+                                        <input type="radio" th:field="*{role}" value="STUDENT"> Student
                                     </label>
                                 </div>
                                 <button type="submit" class="btn login-form__btn submit w-100">Sign in</button>

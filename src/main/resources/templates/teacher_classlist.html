@@ -69,87 +69,16 @@
 
                             <div class="row m-b-30">
 
-                                <!-- Quiz 1 -->
-                                <div class="col-lg-6">
-                                    <div class="card border-primary">
-                                        <div class="card-header">ITCC122</div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Computer Programming II - Quiz 1</h5>
-                                            <p class="card-text">Instructor: Patrick Justin Ariado</p>
-                                            <a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
-                                            <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
+                                <div class="row" th:each="q : ${quizzes}">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 th:text="${q.title}">Quiz Title</h5>
+                                                <p>Class: <span th:text="${q.classRoom != null ? q.classRoom.name : 'N/A'}"></span></p>
+                                                <a th:href="@{|/teacher/teacher_classlist/edit_quiz/${q.id}|}" class="btn btn-success">Edit</a>
+                                                <a th:href="@{|/teacher/teacher_classlist/results/${q.id}|}" class="btn btn-info">Results</a>
+                                            </div>
                                         </div>
-                                        <div class="card-footer"><small>Last updated 3 minutes ago</small></div>
-                                    </div>
-                                </div>
-
-                                <!-- Quiz 2 -->
-                                <div class="col-lg-6">
-                                    <div class="card border-primary">
-                                        <div class="card-header">GEC11A</div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Environmental Science - Quiz 1</h5>
-                                            <p class="card-text">Instructor: Ron Eric Legaspi</p>
-                                            <a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
-                                            <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
-                                        </div>
-                                        <div class="card-footer"><small>Last updated 40 minutes ago</small></div>
-                                    </div>
-                                </div>
-
-                                <!-- Quiz 3 -->
-                                <div class="col-lg-6">
-                                    <div class="card border-primary">
-                                        <div class="card-header">ITM211 CP2</div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Information Management - Quiz 2</h5>
-                                            <p class="card-text">Instructor: Patrick Justin Ariado</p>
-                                            <a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
-                                            <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
-                                        </div>
-                                        <div class="card-footer"><small>Last updated 1 hour ago</small></div>
-                                    </div>
-                                </div>
-
-                                <!-- Quiz 4 -->
-                                <div class="col-lg-6">
-                                    <div class="card border-primary">
-                                        <div class="card-header">BTVTEICT-CP</div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Gender and Society - Quiz 1</h5>
-                                            <p class="card-text">Instructor: Anna Tanto</p>
-                                            <a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
-                                            <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
-                                        </div>
-                                        <div class="card-footer"><small>Last updated 1 week ago</small></div>
-                                    </div>
-                                </div>
-
-                                <!-- Quiz 5 (example placeholder) -->
-                                <div class="col-lg-6">
-                                    <div class="card border-primary">
-                                        <div class="card-header">MATH10A</div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">General Mathematics - Quiz 1</h5>
-                                            <p class="card-text">Instructor: Juan Dela Cruz</p>
-                                            <a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
-                                            <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
-                                        </div>
-                                        <div class="card-footer"><small>Last updated 3 days ago</small></div>
-                                    </div>
-                                </div>
-
-                                <!-- Quiz 6 (example placeholder) -->
-                                <div class="col-lg-6">
-                                    <div class="card border-primary">
-                                        <div class="card-header">ENG12B</div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Oral Communication - Quiz 2</h5>
-                                            <p class="card-text">Instructor: Clara Santos</p>
-                                            <a href="/teacher/teacher_classlist/results" class="btn btn-primary">View Results</a>
-                                            <a href="/teacher/teacher_classlist/edit_quiz" class="btn btn-primary">Edit Quiz</a>
-                                        </div>
-                                        <div class="card-footer"><small>Last updated 2 hours ago</small></div>
                                     </div>
                                 </div>
 

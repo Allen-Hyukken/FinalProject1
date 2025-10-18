@@ -57,84 +57,19 @@
                     <h4 class="card-title">Quiz Results Summary</h4>
                     <p class="text-muted">Below are the scores and performance results of students for the recent quiz.</p>
                     <div class="table-responsive">
-                        <table class="table header-border">
+                        <table class="table table-bordered">
                             <thead>
-                            <tr>
-                                <th>Class</th>
-                                <th>Student Name</th>
-                                <th>Subject</th>
-                                <th>Quiz Duration</th>
-                                <th>Status</th>
-                                <th>Score</th>
-                            </tr>
+                            <tr><th>Student</th><th>Score</th><th>Date Submitted</th></tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td><a href="#">ICT 11 - A</a></td>
-                                <td>Benedict Karl G. Rosas</td>
-                                <td><span class="text-muted">Computer Programming II</span></td>
-                                <td>2:30 PM - 4:30 PM</td>
-                                <td><span class="label gradient-1 rounded">Passed</span></td>
-                                <td>48 / 50</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">ICT 11 - A</a></td>
-                                <td>Aren Decain Odang</td>
-                                <td><span class="text-muted">Computer Programming II</span></td>
-                                <td>2:30 PM - 3:00 PM</td>
-                                <td><span class="label gradient-2 rounded">Failed</span></td>
-                                <td>22 / 50</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">STEM 12 - B</a></td>
-                                <td>Caleb Richards</td>
-                                <td><span class="text-muted">General Mathematics</span></td>
-                                <td>9:00 AM - 9:45 AM</td>
-                                <td><span class="label gradient-3 rounded">Passed</span></td>
-                                <td>39 / 50</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">ABM 11 - C</a></td>
-                                <td>June Lane</td>
-                                <td><span class="text-muted">Business Management</span></td>
-                                <td>10:00 AM - 10:30 AM</td>
-                                <td><span class="label gradient-1 rounded">Passed</span></td>
-                                <td>45 / 50</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">HUMSS 12 - D</a></td>
-                                <td>Mary Adams</td>
-                                <td><span class="text-muted">Philosophy</span></td>
-                                <td>8:00 AM - 8:40 AM</td>
-                                <td><span class="label gradient-2 rounded">Failed</span></td>
-                                <td>28 / 50</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">TVL 10 - E</a></td>
-                                <td>Herman Beck</td>
-                                <td><span class="text-muted">Electrical Installation</span></td>
-                                <td>3:15 PM - 3:45 PM</td>
-                                <td><span class="label gradient-1 rounded">Passed</span></td>
-                                <td>41 / 50</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">GAS 12 - F</a></td>
-                                <td>Ella Santos</td>
-                                <td><span class="text-muted">Oral Communication</span></td>
-                                <td>11:00 AM - 11:40 AM</td>
-                                <td><span class="label gradient-1 rounded">Passed</span></td>
-                                <td>46 / 50</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">ICT 11 - A</a></td>
-                                <td>Lucas Tan</td>
-                                <td><span class="text-muted">Computer Programming II</span></td>
-                                <td>2:00 PM - 2:40 PM</td>
-                                <td><span class="label gradient-2 rounded">Failed</span></td>
-                                <td>25 / 50</td>
+                            <tr th:each="a : ${attempts}">
+                                <td th:text="${a.student.name}">Student Name</td>
+                                <td th:text="${a.score}">Score</td>
+                                <td th:text="${#dates.format(a.submittedAt, 'yyyy-MM-dd HH:mm')}">Date</td>
                             </tr>
                             </tbody>
                         </table>
+
                     </div>
                 </div>
             </div>
