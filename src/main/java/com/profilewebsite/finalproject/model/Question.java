@@ -1,29 +1,37 @@
 package com.profilewebsite.finalproject.model;
 
-
 import jakarta.persistence.*;
-import lombok.*;
-import java.util.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.List;
 
 @Entity
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+@Getter @Setter
 public class Question {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "quiz_id")
     private Quiz quiz;
 
-    // "MCQ", "TF", "IDENT", "ESSAY"
+    private Integer qIndex = 0;
+
+    // MCQ, TF, IDENT, ESSAY
     private String type;
 
     @Column(columnDefinition = "TEXT")
     private String text;
 
     @Column(columnDefinition = "TEXT")
-    private String expectedAnswer; // for TF or IDENT
+    private String correctAnswer; // for TF and IDENT
+
+    @Column(columnDefinition = "TEXT")
+    private String guideAnswer; // optional for essay
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Choice> choices = new ArrayList<>();
-}
+    private List<Choice> choices;
 
+
+}

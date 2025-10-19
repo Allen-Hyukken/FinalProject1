@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-
-    <!-- theme meta -->
     <meta name="theme-name" content="quixlab" />
 
-    <title>Quixlab - Bootstrap Admin Dashboard Template</title>
+    <title>Take Quiz - Student</title>
+
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" th:href="@{/images/favicon.png}">
 
-    <!-- Pignose Calendar -->
+    <!-- CSS Plugins -->
     <link th:href="@{/plugins/pg-calendar/css/pignose.calendar.min.css}" rel="stylesheet">
-
-    <!-- Chartist -->
     <link th:href="@{/plugins/chartist/css/chartist.min.css}" rel="stylesheet">
     <link th:href="@{/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css}" rel="stylesheet">
 
@@ -26,58 +23,21 @@
 
 <body>
 
-<!--*******************
-    Preloader start
-********************-->
-<div id="preloader">
-    <div class="loader">
-        <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
-        </svg>
-    </div>
-</div>
-<!--*******************
-    Preloader end
-********************-->
-
-<!--**********************************
-    Main wrapper start
-***********************************-->
 <div id="main-wrapper">
 
-    <!--**********************************
-        Nav header start
-    ***********************************-->
+    <!-- Nav Header -->
     <div class="nav-header">
         <div class="brand-logo">
             <a th:href="@{/}">
-                <b class="logo-abbr"><img th:src="@{/images/logo.png}" alt=""> </b>
+                <b class="logo-abbr"><img th:src="@{/images/logo.png}" alt=""></b>
                 <span class="logo-compact"><img th:src="@{/images/logo-compact.png}" alt=""></span>
-                <span class="brand-title">
-                        <img th:src="@{/images/logo-text.png}" alt="">
-                    </span>
+                <span class="brand-title"><img th:src="@{/images/logo-text.png}" alt=""></span>
             </a>
         </div>
     </div>
-    <!--**********************************
-        Nav header end
-    ***********************************-->
 
-    <!--**********************************
-        Header start
-    ***********************************-->
+    <!-- Header -->
     <div th:replace="fragments/header :: header"></div>
-    <!--**********************************
-        Header end
-    ***********************************-->
-
-    <!--**********************************
-        Sidebar start
-    ***********************************-->
-
-    <!--**********************************
-        Sidebar end
-    ***********************************-->
 
     <!--**********************************
         Content body start
@@ -86,65 +46,83 @@
         <div class="row mx-0">
             <div class="col p-md-0">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/student">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="/student/student_class">Class</a></li>
-                    <li class="breadcrumb-item active"><a href="/student/student_clas/student_quiz">Quiz</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/student}">Home</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/student/student_class}">Classes</a></li>
+                    <li class="breadcrumb-item active">Quiz</li>
                 </ol>
             </div>
         </div>
-        <div class = "container-fluid">
+
+        <!-- Quiz Content -->
+        <div class="container-fluid">
             <div class="col-lg-12">
-                <div class="card">
-                  <div class="card-body">
-                      <form th:action="@{|/student/student_class/${quiz.classRoom.id}/quiz/${quiz.id}/submit|}" method="post">
-                          <div th:each="q, qi : ${quiz.questions}">
-                              <h5 th:text="${qi.index + 1} + '. ' + q.text"></h5>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4 text-center" th:text="${quiz.title}">Quiz Title</h3>
 
-                              <!-- Multiple Choice -->
-                              <div th:if="${q.type == 'MCQ'}" th:each="c : ${q.choices}">
-                                  <label><input type="radio" th:name="${'q_' + q.id}" th:value="${c.id}"> <span th:text="${c.text}"></span></label>
-                              </div>
+                        <form th:action="@{|/student/student_class/${quiz.classRoom.id}/quiz/${quiz.id}/submit|}"
+                              method="post">
+                            <!-- ✅ CSRF Token -->
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
 
-                              <!-- True/False -->
-                              <div th:if="${q.type == 'TF'}">
-                                  <label><input type="radio" th:name="${'q_' + q.id}" value="TRUE"> TRUE</label>
-                                  <label><input type="radio" th:name="${'q_' + q.id}" value="FALSE"> FALSE</label>
-                              </div>
+                            <!-- Questions -->
+                            <div th:each="q, qi : ${quiz.questions}" class="mb-4">
+                                <h5 th:text="${qi.index + 1} + '. ' + q.text" class="mb-3"></h5>
 
-                              <!-- Identification/Essay -->
-                              <div th:if="${q.type == 'ESSAY' or q.type == 'IDENT'}">
-                                  <textarea th:name="${'q_' + q.id}" class="form-control"></textarea>
-                              </div>
+                                <!-- Multiple Choice -->
+                                <div th:if="${q.type == 'MCQ'}" class="mb-2">
+                                    <div th:each="c : ${q.choices}" class="form-check">
+                                        <input class="form-check-input"
+                                               type="radio"
+                                               th:name="${'q_' + q.id}"
+                                               th:id="${'choice_' + c.id}"
+                                               th:value="${c.id}"
+                                               required>
+                                        <label class="form-check-label" th:for="${'choice_' + c.id}" th:text="${c.text}"></label>
+                                    </div>
+                                </div>
 
-                              <hr/>
-                          </div>
-                          <button type="submit" class="btn btn-success">Submit</button>
-                      </form>
+                                <!-- True / False -->
+                                <div th:if="${q.type == 'TF'}" class="mb-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" th:name="${'q_' + q.id}" id="true" value="TRUE" required>
+                                        <label class="form-check-label" for="true">TRUE</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" th:name="${'q_' + q.id}" id="false" value="FALSE" required>
+                                        <label class="form-check-label" for="false">FALSE</label>
+                                    </div>
+                                </div>
 
-                  </div>
+                                <!-- Essay / Identification -->
+                                <div th:if="${q.type == 'ESSAY' or q.type == 'IDENT'}" class="mb-3">
+                                    <textarea class="form-control"
+                                              rows="3"
+                                              placeholder="Type your answer here..."
+                                              th:name="${'q_' + q.id}"
+                                              required></textarea>
+                                </div>
+
+                                <hr>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success btn-lg btn-rounded px-5">
+                                    Submit Answers
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
                 </div>
             </div>
         </div>
-
-    </div>
-
-
-
-
-
-<!-- Your page content here -->
     </div>
     <!--**********************************
         Content body end
     ***********************************-->
 
-    <!--**********************************
-        Footer start
-    ***********************************-->
     <div th:replace="fragments/footer :: footer"></div>
-    <!--**********************************
-        Footer end
-    ***********************************-->
 </div>
 <!--**********************************
     Main wrapper end
@@ -159,27 +137,18 @@
 <script th:src="@{/js/gleek.js}"></script>
 <script th:src="@{/js/styleSwitcher.js}"></script>
 
-<!-- Chartjs -->
 <script th:src="@{/plugins/chart.js/Chart.bundle.min.js}"></script>
-<!-- Circle progress -->
 <script th:src="@{/plugins/circle-progress/circle-progress.min.js}"></script>
-<!-- Datamap -->
 <script th:src="@{/plugins/d3v3/index.js}"></script>
 <script th:src="@{/plugins/topojson/topojson.min.js}"></script>
 <script th:src="@{/plugins/datamaps/datamaps.world.min.js}"></script>
-<!-- Morrisjs -->
 <script th:src="@{/plugins/raphael/raphael.min.js}"></script>
 <script th:src="@{/plugins/morris/morris.min.js}"></script>
-<!-- Pignose Calendar -->
 <script th:src="@{/plugins/moment/moment.min.js}"></script>
 <script th:src="@{/plugins/pg-calendar/js/pignose.calendar.min.js}"></script>
-<!-- ChartistJS -->
 <script th:src="@{/plugins/chartist/js/chartist.min.js}"></script>
 <script th:src="@{/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js}"></script>
-
-<!-- Dashboard Script -->
 <script th:src="@{/js/dashboard/dashboard-1.js}"></script>
 
 </body>
-
 </html>

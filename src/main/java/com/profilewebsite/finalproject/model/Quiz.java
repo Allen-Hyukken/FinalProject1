@@ -1,27 +1,36 @@
 package com.profilewebsite.finalproject.model;
 
-
 import jakarta.persistence.*;
-import lombok.*;
-import java.util.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+@Getter @Setter
 public class Quiz {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
+    @Column(columnDefinition = "TEXT")
+    private String description;
+    private boolean published = true;
 
     @ManyToOne
+    @JoinColumn(name = "class_room_id")
     private ClassRoom classRoom;
 
     @ManyToOne
+    @JoinColumn(name = "teacher_id")
     private User teacher;
 
-    private boolean published = true;
+    private Double totalPoints = 0.0;
+
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Question> questions = new ArrayList<>();
+    @OrderBy("qIndex ASC")
+    private List<Question> questions;
 }
-
